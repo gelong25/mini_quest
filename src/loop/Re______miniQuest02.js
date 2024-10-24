@@ -2,6 +2,7 @@
 //*을 사용해 출력할 것 
 
 //https://www.notion.so/adapterz/128394a4806180cb8ca5f582bbbaf1ce?pvs=4
+//https://velog.io/@rayong/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B3%84-%EC%B0%8D%EA%B8%B0-%EC%A0%9C%EC%BD%94%EB%B2%A0-JS-100%EC%A0%9C
 
 let star = 9; 
 let blank = ' '; 

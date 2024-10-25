@@ -9,9 +9,11 @@ if(num < 2) {
     process.exit();
 }
 
+//함수 호출 
 let mul = multiple(num);
 console.log(mul); 
 
+//구구단 함수 
 function multiple(number) {
     let result = ''; 
     for(let i = 1; i < 10; i++) {

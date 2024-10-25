@@ -1,13 +1,13 @@
-//ì‚¬ì¹™ì—°ì‚° ê³„ì‚°ê¸°ë¥¼ í•¨ìˆ˜ë¥¼ ì´ìš©í•´ ë§Œë“¤ê¸° 
+//»çÄ¢¿¬»ê °è»ê±â¸¦ ÇÔ¼ö¸¦ ÀÌ¿ëÇØ ¸¸µé±â 
 /* 
-1. else defualt ì œì™¸ ë‚˜ë¨¸ì§€ ì¡°ê±´ë¬¸ ë™ì‘ ì½”ë“œì—ì„œ console.log() ì˜ ì†Œê´„í˜¸ ì•ˆì˜ ê°’ì€ ë³€ìˆ˜ë§Œ ì‚¬ìš©
-2. ë‘ ë²ˆì§¸ ìˆ«ìê°€ 0ì¸ ê²½ìš° ë‚˜ëˆ—ì…ˆ í•  ìˆ˜ ì—†ë„ë¡ ì²˜ë¦¬ 
+1. else defualt Á¦¿Ü ³ª¸ÓÁö Á¶°Ç¹® µ¿ÀÛ ÄÚµå¿¡¼­ console.log() ÀÇ ¼Ò°ıÈ£ ¾ÈÀÇ °ªÀº º¯¼ö¸¸ »ç¿ë
+2. µÎ ¹øÂ° ¼ıÀÚ°¡ 0ÀÎ °æ¿ì ³ª´°¼À ÇÒ ¼ö ¾øµµ·Ï Ã³¸® 
 */
 
 const readlineSyncModule = require('readline-sync');
-const firstNumber = Number(readlineSyncModule.question('ì²« ë²ˆì§¸ ìˆ«ì*: '));
-const secondNumber = Number(readlineSyncModule.question('ë‘ ë²ˆì§¸ ìˆ«ì*: ')); 
-const operator = readlineSyncModule.question('ì—°ì‚° ê¸°í˜¸: '); 
+const firstNumber = Number(readlineSyncModule.question('Ã¹ ¹øÂ° ¼ıÀÚ*: '));
+const secondNumber = Number(readlineSyncModule.question('µÎ ¹øÂ° ¼ıÀÚ*: ')); 
+const operator = readlineSyncModule.question('¿¬»ê ±âÈ£: '); 
 
 let op = arithmetic(firstNumber, secondNumber, operator);
 console.log(op); 
@@ -28,13 +28,13 @@ function arithmetic(firstNum, secNum, operator) {
             break;
         case '/':  
             if(secNum === 0) {
-                const error = 'ë‘ ë²ˆì§¸ ìˆ«ìëŠ” 0ì´ ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.';
+                const error = 'µÎ ¹øÂ° ¼ıÀÚ´Â 0ÀÌ ¿Ã ¼ö ¾ø½À´Ï´Ù.';
                 console.log(error); 
             }
             result = firstNum / secNum;    
             break;
         default:   
-            result = 'ìœ íš¨í•˜ì§€ ì•Šì€ ì—°ì‚°ìì…ë‹ˆë‹¤.';   
+            result = 'À¯È¿ÇÏÁö ¾ÊÀº ¿¬»êÀÚÀÔ´Ï´Ù.';   
     }
 
     return result;

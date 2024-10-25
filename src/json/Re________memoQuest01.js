@@ -1,21 +1,18 @@
-//메모목록 보기 기능 및 사용자에게 입력 받는 부분을 함수로 변환 
-/*
-1-1. 메모 조회기능의 목록을 보여주는 부분을 함수로 만든다
-1-2. 수정 기능, 삭제 기능을 사용할 때 목록보기 함수를 호출한다 
-2. 사용자에게 입력받는 부분을 함수로 만들기 위해선 매개변수를 사용해야 함 
+//메모 작성 기능의 list 사용 부분을 JSON을 사용하는 방식으로 변경 
+/* 
+1. 메모를 작성하면 제목과 내용이 저장됨
+2-1 제목 값의 프로퍼티 키는 title로 고정  
+2-2 내용 값의 프로퍼티 키는 content로 고정
 */
 
-const titles = []; 
-const contents = []; 
+import readlineSync from 'readline-sync';
+import fileSystem from 'fs'
+
+const filePath = 'memo.json'; 
 
 const readlineSyncModule = require('readline-sync');
 
-
-let memoTitle = readlineSyncModule.question('메모 제목: ');
-titles.push(memoTitle);
-let memoContent = readlineSyncModule.question('메모 내용: ');
-contents.push(memoContent); 
-
+const memo = []; 
 
 let write = '작성';
 let inquery = '조회';
@@ -43,20 +40,32 @@ do {
 
     switch (userSelect) {
         case 1: 
-            console.log(write)
+            //메모 작성
+            const title = readlineSyncModule.question('메모 제목: ');
+            const content = readlineSyncModule.question('메모 내용: '); 
+            
+            //객체 생성해서 키랑 밸류를 객체로 만듦 
+            let object = {};
+            object[title] = content; 
+
+            //배열에 객체 추가 
+            memo.push(object); 
+            
+            //메모를 작성하면 제목과 내용이 저장됨
+
             break;
         case 2:
-            //주어진 조건 대로 메모 제목 리스트를 출력
-            viewList(titles);
+            //메모의 제목 목록을 출력 
+            viewList(); 
             titleSelect = Number(readlineSyncModule.question('조회할 제목 선택: ')); 
-            if(titleSelect > titles.length) {
+            if(titleSelect > keys.length) {
                 break; 
             }
             console.log(titles[titleSelect], contents[titleSelect]); 
             break;
         case 3:
             //함수를 불러와 리스트 출력 
-            viewList(titles);
+            viewList();
             titleSelect = Number(readlineSyncModule.question('수정할 제목 선택(원치 않을 경우 -1): ')); 
             if(titleSelect == -1) {
                 break; 
@@ -68,7 +77,7 @@ do {
             break;
         case 4:
             //함수를 불러와 리스트 출력 
-            viewList(titles);
+            viewList();
             titleSelect = Number(readlineSyncModule.question('삭제할 제목 선택(원치 않을 경우 -1): ')); 
             if(titleSelect == -1) {
                 break; 
@@ -92,6 +101,10 @@ do {
 } while(userSelect != 6); 
 
 //메모 목록 보는 함수 
-function viewList(list) {
-    console.log(list); 
+function viewList() {
+    const keys = Object.keys(object); 
+            for(let i = 0; i < keys.length; i++) {
+                let key = keys[i];
+                console.log(key); 
+            }
 }

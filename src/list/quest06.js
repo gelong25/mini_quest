@@ -28,18 +28,22 @@ let deletion = '삭제';
 let addFuction = '추가기능';
 let end = '종료';
 
-console.log("1. 작성");
-console.log("2. 조회");
-console.log("3. 수정");
-console.log("4. 삭제");
-console.log("5. 추가기능");
-console.log("6. 종료");
+//사용자에게 보여줄 이용 가능 메뉴 출력 
+console.log('    메뉴    '); 
+console.log('-------------');
+console.log('1. 작성');
+console.log('2. 조회');
+console.log('3. 수정');
+console.log('4. 삭제');
+console.log('5. 추가기능');
+console.log('6. 종료');
+console.log('-------------');
 
 let userSelect
 
 do {
     
-    userSelect = Number(readlineSyncModule.question('메뉴 선택: ')); //숫자로 변환해야 함 
+    userSelect = Number(readlineSyncModule.question('메뉴 선택: ')); 
 
     // 2 조회, 3 수정, 4 삭제 기능 추가  
     switch (userSelect) {
@@ -94,7 +98,7 @@ do {
             console.log(end);
             break; 
         default:
-            console.log('없는 메뉴입니다.');
+            console.log('유효하지 않은 메뉴입니다.');
             break;
     
     }

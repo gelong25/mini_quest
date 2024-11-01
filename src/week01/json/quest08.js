@@ -51,7 +51,7 @@ do {
                 content: content
             };
             
-            //기존 메모 목록을 출력 
+            //기존 메모 목록을 불러옴 
             const memos = viewMemo();
             //함수를 통해 메모 추가 및 저장 
             memos.push(newMemo);

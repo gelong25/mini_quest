@@ -5,7 +5,7 @@
 let height = 5; 
 let base = 9;
 
-for(let i = 1; i < height; i++) {
+for(let i = 1; i <= height; i++) {  // 높이 5로 수정 
     
     let row = '';
     

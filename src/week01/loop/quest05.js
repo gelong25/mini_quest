@@ -22,12 +22,12 @@ let end = '종료';
 //사용자에게 보여줄 이용 가능 메뉴 출력 
 console.log('    메뉴    '); 
 console.log('-------------');
-console.log('1. 작성');
-console.log('2. 조회');
-console.log('3. 수정');
-console.log('4. 삭제');
-console.log('5. 추가기능');
-console.log('6. 종료');
+console.log(`1. ${write}`);
+console.log(`2. ${inquery}`);
+console.log(`3. ${modify}`);
+console.log(`4. ${deletion}`);
+console.log(`5. ${addFuction}`);
+console.log(`6. ${end}`);
 console.log('-------------');
 
 let userSelect
@@ -38,7 +38,9 @@ do {
 
     switch (userSelect) {
         case 1: 
-            console.log(write)
+            console.log(write);
+            memoTitle = readlineSyncModule.question('메모 제목: ');
+            memoContent = readlineSyncModule.question('메모 내용: ');
             break;
         case 2:
             console.log(inquery)
